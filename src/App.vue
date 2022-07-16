@@ -5,13 +5,13 @@ import MyFooter from '@/components/MyFooter.vue'
 
 <template>
   <div id="app-container" class="h-screen bg-green-100 flex flex-col">
-    <div class="flex-grow flex-shrink-0">
+    <div class="grow shrink-0">
       <MyHeader></MyHeader>
       <main>
         <RouterView />
       </main>
     </div>
-    <MyFooter class="flex-shrink-0"></MyFooter>
+    <MyFooter class="shrink-0"></MyFooter>
   </div>
 </template>
 

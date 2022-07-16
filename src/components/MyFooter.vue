@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const active = ref(-1)
+const active = ref(0)
 
 const btns = ref([
   {
@@ -33,12 +33,13 @@ const btns = ref([
       <nav class="absolute -top-1/4 sm:-top-2/4">
         <template v-for="(btn, index) in btns" :key="btn.text">
           <button
+            class="rounded-2xl mr-3 p-4 w-16 sm:w-32 bg-gray-50 text-yellow-900/50 text-xl font-medium text-center transition duration-500 ease-out hover:-translate-y-3 hover:scale-110"
             :class="
-              active === index &&
-              'ring-2 ring-yellow-900 ring-opacity-10 shadow-lg text-opacity-100'
+              active === index
+                ? 'shadow-lg ring-2 ring-yellow-900/10 text-yellow-900/100'
+                : 'shadow-sm'
             "
             @click="active = index"
-            class="shadow-sm rounded-2xl mr-3 p-4 w-16 sm:w-32 bg-gray-50 text-yellow-900 text-xl font-medium text-opacity-50 text-center transition duration-500 ease-out transform hover:-translate-y-3 hover:scale-110"
           >
             <div v-show="btn.icon" v-html="btn.icon" class="mb-2"></div>
             <span
